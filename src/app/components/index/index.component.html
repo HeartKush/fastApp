@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 d-flex mt-5 justify-content-around">
+            <div class="col-6 border ">
+                <div class="d-flex justify-content-around">
+                    <input class="col-11 mt-4 mb-2rounded-pill" type="text" placeholder="Buscar" id="search" name="search">
+                </div>
+                <div class="justify-content-around mt-4 mb-2 ms-5">
+                    <div *ngFor="let userLists of userList" class="card col-11 mb-3">
+                        <div class="row g-0">
+                          <div class="col-md-4">
+                            <img src={{userLists.avatar}} class="img-fluid rounded-start" style="width: 200px; height: 200px;">
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body">
+                              <p class="card-text mt-4 fw-bold mb-3 ">Nombre: <span class="fw-normal"> {{userLists.first_name}} {{userLists.last_name}} </span> </p>
+                              <p class="card-text fw-bold">Email: <span class="fw-normal">{{userLists.email}} </span> </p>
+                              <button class="btn btn-primary"  [routerLink]="['/detalle/' , userLists.id]"> Ver detalles</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
